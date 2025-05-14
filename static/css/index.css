@@ -1,4 +1,4 @@
-* {
+/* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -69,6 +69,7 @@ ul {
 }
 
 /* Section__one */
+/*
 #section__one {
   width: 100%;
   min-height: 85vh;
@@ -138,6 +139,7 @@ ul {
 /* Media Queries for Responsive Design */
 
 /* Small screens (max-width: 599px) */
+/*
 @media only screen and (max-width: 599px) {
   .header {
     flex-direction: column;
@@ -200,6 +202,7 @@ ul {
 }
 
 /* Medium screens (600px to 899px) */
+/*
 @media only screen and (min-width: 600px) and (max-width: 899px) {
   .header {
     flex-direction: row;
@@ -237,6 +240,7 @@ ul {
 }
 
 /* Large screens (900px and above) */
+/*
 @media only screen and (min-width: 900px) {
   .header {
     flex-direction: row;
@@ -278,5 +282,410 @@ ul {
 
   #profile .profile__contaier .image__box__profile .details {
     text-align: left;
+  }
+}
+
+
+/* Extra small screens (max-width: 480px) */
+/*
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header #logo a img {
+    width: 90px;
+  }
+
+  #section__one h1 {
+    font-size: 36px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  #section__one h4 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #section__one .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #section__one .btns a {
+    width: 80%;
+    text-align: center;
+  }
+
+  #section__three .right__text,
+  #section__three .left__image img {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+
+  #section__four .pizza__container__box .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #signup .form__box form {
+    width: 95%;
+  }
+
+  #profile .profile__contaier .image__box__profile .address {
+    font-size: 16px;
+  }
+
+  #profile .profile__contaier .image__box__profile .address i {
+    font-size: 16px;
+  }
+}
+*/
+
+
+
+/* Your original CSS remains the same, but I'll enhance the media queries */
+
+/* Extra small screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header #logo a img {
+    width: 90px;
+  }
+  
+  .header #navbar ul {
+    gap: 5px;
+  }
+  
+  .header #navbar ul li {
+    margin: 5px;
+  }
+  
+  .header #navbar ul li a {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #section__one {
+    padding: 0 15px;
+    text-align: center;
+  }
+  
+  #section__one h1 {
+    font-size: 36px;
+    text-align: center;
+    padding: 0 10px;
+    word-wrap: break-word;
+  }
+
+  #section__one h4 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #section__one .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  #section__one .btns a {
+    width: 80%;
+    text-align: center;
+    margin: 0;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  #section__three .right__text,
+  #section__three .left__image img {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  
+  #section__three .right__text h1 {
+    font-size: 24px;
+  }
+  
+  #section__three .right__text p {
+    font-size: 14px;
+  }
+
+  #section__four .pizza__container__box {
+    padding: 10px;
+  }
+  
+  #section__four .pizza__container__box .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #signup .form__box form {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  #signup .form__box form input,
+  #signup .form__box form button {
+    padding: 10px;
+  }
+
+  #profile .profile__contaier {
+    padding: 15px;
+  }
+  
+  #profile .profile__contaier .image__box__profile {
+    padding: 10px;
+  }
+  
+  #profile .profile__contaier .image__box__profile img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  #profile .profile__contaier .image__box__profile .details h1 {
+    font-size: 20px;
+  }
+  
+  #profile .profile__contaier .image__box__profile .address {
+    font-size: 14px;
+  }
+
+  #profile .profile__contaier .image__box__profile .address i {
+    font-size: 14px;
+  }
+}
+
+/* Small screens (481px to 599px) */
+@media only screen and (min-width: 481px) and (max-width: 599px) {
+  .header {
+    padding: 12px;
+  }
+
+  .header #logo a img {
+    width: 100px;
+  }
+  
+  .header #navbar ul li a {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  #section__one h4 {
+    font-size: 28px;
+  }
+
+  #section__one h1 {
+    font-size: 46px;
+    text-align: center;
+  }
+
+  #section__one .btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #section__one .btns a {
+    margin: 5px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  #section__three .left__image img {
+    height: 32vh;
+  }
+
+  #section__three .right__text {
+    padding: 30px;
+    height: 32vh;
+  }
+  
+  #section__three .right__text h1 {
+    font-size: 26px;
+  }
+
+  #section__four .pizza__container__box .card {
+    width: 85%;
+    margin: 10px auto;
+  }
+
+  #signup .form__box form {
+    width: 85%;
+  }
+}
+
+/* Medium screens (600px to 899px) */
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header #logo a img {
+    width: 110px;
+  }
+  
+  .header #navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .header #navbar ul li {
+    margin: 5px 8px;
+  }
+  
+  .header #navbar ul li a {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  #section__one {
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  #section__one h4 {
+    font-size: 40px;
+  }
+
+  #section__one h1 {
+    font-size: 56px;
+    text-align: center;
+  }
+  
+  #section__one .btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  #section__one .btns a {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+
+  #section__three .left__image img {
+    height: 35vh;
+    object-fit: cover;
+  }
+
+  #section__three .right__text {
+    padding: 40px;
+    height: 35vh;
+    overflow-y: auto;
+  }
+  
+  #section__three .right__text h1 {
+    font-size: 28px;
+  }
+
+  #section__four .pizza__container__box {
+    padding: 20px;
+    justify-content: space-around;
+  }
+  
+  #section__four .pizza__container__box .card {
+    width: 45%;
+    margin: 10px 5px;
+  }
+
+  #signup .form__box form {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  #profile .profile__contaier {
+    padding: 20px;
+  }
+  
+  #profile .profile__contaier .image__box__profile {
+    padding: 15px;
+  }
+  
+  #profile .profile__contaier .image__box__profile img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Large screens additional tweaks (900px and above) */
+@media only screen and (min-width: 900px) {
+  .header {
+    padding: 20px 30px;
+  }
+  
+  #section__four .pizza__container__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  
+  #section__four .pizza__container__box .card {
+    margin: 15px 0;
+  }
+  
+  #section__three {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  #section__three .left__image,
+  #section__three .right__text {
+    flex: 1;
+  }
+}
+
+/* Add a few general improvements for all screen sizes */
+#section__four .pizza__container__box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#section__three {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#section__three .left__image,
+#section__three .right__text {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  #section__three .left__image,
+  #section__three .right__text {
+    width: 50%;
+  }
+}
+
+/* Improve readability on mobile devices */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .header {
+    flex-wrap: wrap;
+  }
+  
+  .header #logo {
+    margin-bottom: 10px;
+  }
+  
+  #section__one .btns {
+    margin-top: 20px;
   }
 }
