@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./static/images/bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  width: 100%;
+  background: rgb(16, 16, 16);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.header #logo a img {
+  width: 120px;
+}
+
+.header #navbar ul {
+  display: flex;
+}
+
+.header #navbar ul li {
+  margin: 0 10px;
+}
+
+.header #navbar ul li a {
+  color: #fff;
+  text-transform: capitalize;
+  padding: 10px;
+  transition: all 0.4s ease;
+}
+
+.header #navbar ul li a:hover {
+  color: rgb(255, 187, 0);
+  transition: all 0.4s ease;
+}
+
+.header #navbar ul li a.active {
+  color: rgb(255, 187, 0);
+}
+
+/* Section__one */
+#section__one {
+  width: 100%;
+  min-height: 85vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/bg2.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#section__one h4 {
+  color: rgb(255, 179, 0);
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 50px;
+}
+
+#section__one h1 {
+  color: #fff;
+  font-family: "Josefin Sans";
+  font-weight: 400;
+  font-size: 70px;
+}
+
+#section__one .btns {
+  position: relative;
+  top: 30px;
+}
+
+#section__one .btns a {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 10px;
+  padding: 15px 30px;
+  font-weight: 500;
+  border: 1px solid rgb(255, 179, 0);
+  transition: all 0.4s ease;
+}
+
+#section__one .btns a:nth-child(1) {
+  background: rgb(255, 179, 0);
+  color: #000;
+}
+
+#section__one .btns a:nth-child(1):hover {
+  border: 1px solid rgb(255, 179, 0);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+#section__one .btns a:nth-child(2) {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#section__one .btns a:nth-child(2):hover {
+  background: rgb(255, 179, 0);
+  color: #000;
+  transition: all 0.4s ease;
+}
+
+/* Additional section and styles omitted for brevity */
+
+/* Media Queries for Responsive Design */
+
+/* Small screens (max-width: 599px) */
+@media only screen and (max-width: 599px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .header #navbar ul {
+    flex-direction: column;
+  }
+
+  .header #navbar ul li {
+    margin: 5px 0;
+  }
+
+  #section__one h4 {
+    font-size: 30px;
+  }
+
+  #section__one h1 {
+    font-size: 50px;
+  }
+
+  #section__one .btns {
+    top: 20px;
+  }
+
+  #section__three .left__image img {
+    height: 30vh;
+  }
+
+  #section__three .right__text {
+    padding: 50px;
+    height: 30vh;
+  }
+
+  #section__four .pizza__container__box .card {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  #signup .form__box form {
+    width: 80%;
+  }
+
+  #profile .profile__contaier .image__box__profile {
+    flex-direction: column;
+  }
+
+  #profile .profile__contaier .image__box__profile .details {
+    text-align: center;
+  }
+
+  #profile .profile__contaier .image__box__profile .address {
+    font-size: 18px;
+  }
+
+  #profile .profile__contaier .image__box__profile .address i {
+    font-size: 18px;
+  }
+}
+
+/* Medium screens (600px to 899px) */
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .header {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .header #navbar ul {
+    flex-direction: row;
+  }
+
+  #section__one h4 {
+    font-size: 40px;
+  }
+
+  #section__one h1 {
+    font-size: 60px;
+  }
+
+  #section__three .left__image img {
+    height: 35vh;
+  }
+
+  #section__three .right__text {
+    padding: 60px;
+    height: 35vh;
+  }
+
+  #section__four .pizza__container__box .card {
+    width: 45%;
+  }
+
+  #signup .form__box form {
+    width: 60%;
+  }
+}
+
+/* Large screens (900px and above) */
+@media only screen and (min-width: 900px) {
+  .header {
+    flex-direction: row;
+    padding: 30px;
+  }
+
+  .header #navbar ul {
+    flex-direction: row;
+  }
+
+  #section__one h4 {
+    font-size: 50px;
+  }
+
+  #section__one h1 {
+    font-size: 70px;
+  }
+
+  #section__three .left__image img {
+    height: 40vh;
+  }
+
+  #section__three .right__text {
+    padding: 100px;
+    height: 40vh;
+  }
+
+  #section__four .pizza__container__box .card {
+    width: 30%;
+  }
+
+  #signup .form__box form {
+    width: 40%;
+  }
+
+  #profile .profile__contaier .image__box__profile {
+    flex-direction: row;
+  }
+
+  #profile .profile__contaier .image__box__profile .details {
+    text-align: left;
+  }
+}
