@@ -1,9 +1,11 @@
 from django.urls import path
 from . import views
+from .views import (MenuListView)
 urlpatterns = [
     path('', views.home, name="home"),
     path('orders/', views.orders, name="orders"),
-    path('menu/', views.menu, name="menu"),
+    # path('menu/', views.menu, name="menu"),
+    path('menu/', MenuListView.as_view(), name='menu'),
     path('signup/', views.signup, name="signup"),
     path('log_in/', views.log_in, name="log_in"),
     path('logout/', views.logout, name="logout"),

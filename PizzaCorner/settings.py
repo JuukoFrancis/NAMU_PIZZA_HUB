@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,6 +83,9 @@ DATABASES = {
     }
 }
 
+DATABASES["default"] = dj_database_url.parse(
+    "postgresql://namu_pizza_hub_database_user:gyqIK1Mld1tbRY9BuqFLqDhE878KmtIV@dpg-d0iauvje5dus738a7nng-a.oregon-postgres.render.com/namu_pizza_hub_database")
+# postgresql://namu_pizza_hub_database_user:gyqIK1Mld1tbRY9BuqFLqDhE878KmtIV@dpg-d0iauvje5dus738a7nng-a.oregon-postgres.render.com/namu_pizza_hub_database
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -133,5 +136,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'frankstatesman51@gmail.com'
+EMAIL_HOST_PASSWORD = 'mbibemlhlojuahda'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

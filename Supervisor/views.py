@@ -1,8 +1,14 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from Home.models import Address, Contact, Pizza, Orders, Profile
+# emails
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from Home.models import Orders, Address, Profile
+
 
 # Create your views here.
+
 
 def dashboard(request):
     if request.user.is_superuser:
@@ -10,30 +16,32 @@ def dashboard(request):
         # allusers = User.objects.filter(is_superuser=False, username=user.User.username)
         context = {
             # "allusers":allusers,
-            "allconfirmedorders":allconfirmedorders,
+            "allconfirmedorders": allconfirmedorders,
         }
         return render(request, "Supervisor/dashboard.html", context)
     else:
         return redirect("/")
+
 
 def contactlist(request):
     if request.user.is_superuser:
         contacts = Contact.objects.all()
         # print(contacts.first().id)
         context = {
-            "contacts":contacts,
+            "contacts": contacts,
         }
         return render(request, "Supervisor/contactlist.html", context)
     else:
         return redirect("/")
 
+
 def contact_view(request, id):
     if request.user.is_superuser:
         contacts = Contact.objects.filter(id=id)
         context = {
-            "contacts":contacts,
+            "contacts": contacts,
         }
-        if request.method=="POST":
+        if request.method == "POST":
             c_id = request.POST['c_id']
             contact = Contact.objects.filter(id=c_id)
             contact.delete()
@@ -43,6 +51,27 @@ def contact_view(request, id):
         return redirect("/")
 
 
+# def order_view(request, id):
+#     if request.user.is_superuser:
+#         orders = Orders.objects.filter(id=id)
+#         address = Address.objects.all()
+#         profile_images = Profile.objects.all()
+#         context = {
+#             "orders": orders,
+#             "address":address,
+#             "profile_images": profile_images,
+#         }
+#         if request.method=="POST":
+#             o_id = request.POST['o_id']
+#             order = Orders.objects.filter(id=o_id)
+#             order.delete()
+#             # message
+#             return redirect("/dashboard/")
+#         return render(request, "Supervisor/order_view.html", context)
+#     else:
+#         return redirect("/")
+
+
 def order_view(request, id):
     if request.user.is_superuser:
         orders = Orders.objects.filter(id=id)
@@ -50,15 +79,34 @@ def order_view(request, id):
         profile_images = Profile.objects.all()
         context = {
             "orders": orders,
-            "address":address,
+            "address": address,
             "profile_images": profile_images,
         }
-        if request.method=="POST":
+
+        if request.method == "POST":
             o_id = request.POST['o_id']
-            order = Orders.objects.filter(id=o_id)
-            order.delete()
-            # message
+            try:
+                order = Orders.objects.get(id=o_id)
+                user_email = order.User.email
+                username = order.User.username
+
+                # Send thank-you email
+                send_mail(
+                    subject='Thank You for Your Order!',
+                    message=f'Hi {username},\n\nYour pizza has been delivered. Thanks for your support!\n\nEnjoy your meal!',
+                    from_email='your_email@example.com',
+                    recipient_list=[user_email],
+                    fail_silently=False,
+                )
+
+                # Delete the order
+                order.delete()
+
+            except Orders.DoesNotExist:
+                pass  # Optional: handle missing order
+
             return redirect("/dashboard/")
+
         return render(request, "Supervisor/order_view.html", context)
     else:
         return redirect("/")
@@ -75,9 +123,8 @@ def search_order(request):
         allsearches = union_one.union(pizza_price)
         # allsearches = union_two.union(username)
         context = {
-            'allsearches':allsearches,
+            'allsearches': allsearches,
         }
         return render(request, "Supervisor/search.html", context)
     else:
         return redirect("/")
-

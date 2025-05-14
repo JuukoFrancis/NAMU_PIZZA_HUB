@@ -42,8 +42,8 @@
     <header class="header">
       <div id="logo">
         <a href="/">
-          <h1>🍕NAMU PIZZA HUB CO.</h1>
-          {% comment %} <img src="{% static 'images/logo2.png' %}" alt="" /> {% endcomment %}
+          {% comment %} <h1>🍕NAMU PIZZA HUB CO.</h1> {% endcomment %}
+          <img src="{% static 'images/logo4.png' %}" alt="" />
         </a>
       </div>
       <nav id="navbar">
@@ -70,6 +70,9 @@
           </li>
           {% if user.is_authenticated %}
           <li><a href="/profile/">Profile</a></li>
+          {% if user.is_staff or user.is_superuser %}
+          <li><a href="/dashboard/">Dashboard</a></li>
+        {% endif %}
           {% comment %}
           <form action="/accounts/logout/" method="POST">
             {% csrf_token %}

@@ -21,7 +21,7 @@
                 <div class="dilivered">
                     <form action="/order/{{order.id}}/" method="POST">
                     {% csrf_token %}
-                        <input type="text" value="{{order.id}}" name="o_id" id="o_id" class="hidden-input">
+                        <input type="hidden" value="{{order.id}}" name="o_id" id="o_id" class="hidden-input">
                         <button type="submit">Delivered</button>
                     </form>
                 </div>
